@@ -20,16 +20,19 @@ class Telephone
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string Name of the phone
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @var string description of the phone
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
+     * @var \DateTimeInterface the release date for the phone
      */
     private $releaseDate;
 
