@@ -11,7 +11,9 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *
+ *      normalizationContext={
+ *          "groups"={"read"}
+ *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
@@ -21,11 +23,13 @@ class MyUser implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups({"read"})
      */
     private $username;
 
@@ -43,11 +47,13 @@ class MyUser implements UserInterface
     /**
      * @ORM\ManyToOne(targetEntity="MyUser", inversedBy="users")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id", nullable=true)
+     * @Groups({"read"})
      */
     private $client;
 
     /**
      * @ORM\OneToMany(targetEntity="MyUser", mappedBy="client")
+     * @Groups({"read"})
      */
     private $users;
 
