@@ -1,0 +1,13 @@
+App\Entity\MyUser:
+  admin_1:
+    username: 'admin'
+    roles: ['ROLE_ADMIN']
+    password: 'admin'
+  client_1:
+    username: 'client1'
+    roles: ['ROLE_CLIENT']
+    password: 'client1'
+  client_2:
+    username: 'client2'
+    roles: ['ROLE_CLIENT']
+    password: 'client2'
